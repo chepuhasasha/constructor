@@ -5,6 +5,7 @@ export default [
     userID: 1,
     timestamp: 123223,
     code: "",
+    commit: "",
   },
   {
     ID: 2,
@@ -12,5 +13,6 @@ export default [
     userID: 1,
     timestamp: 123223,
     code: "",
+    commit: "",
   },
 ];
