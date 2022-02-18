@@ -1,9 +1,11 @@
 <template lang="pug">
-h1 TEST
+h1 EDITOR
 </template>
+
 <script>
 export default {
-  name: "test",
+  name: "Editor",
 };
 </script>
+
 <style lang="less"></style>
