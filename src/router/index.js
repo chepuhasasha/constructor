@@ -7,12 +7,17 @@ const routes = [
     component: () => import("../views/Home.vue"),
   },
   {
-    path: "/editor/:id",
+    path: "/:catchAll(.*)",
+    name: "Not found",
+    component: () => import("../views/404.vue"),
+  },
+  {
+    path: "/editor/:id?",
     name: "Editor",
     component: () => import("../views/Editor.vue"),
   },
   {
-    path: "/view/:id",
+    path: "/view/:id?",
     name: "View",
     component: () => import("../views/Viewer.vue"),
   },
