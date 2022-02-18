@@ -1,15 +1,9 @@
 {
-  "name": "constructor",
+  "name": "@constructor/api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "workspaces": [
-    "client",
-    "backend"
-  ],
+  "main": "app.js",
   "scripts": {
-    "dev:client": "npm run serve --workspace=client",
-    "dev:api": "npm run dev --workspace=backend",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
