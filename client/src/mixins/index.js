@@ -10,9 +10,9 @@ export default {
     },
     objectToCSS(obj) {
       let content = Object.keys(obj).reduce((accumulator, prop) => {
-        return (accumulator += `  ${this.camelToKebab(prop)}: ${obj[prop]};\n`);
+        return (accumulator += `\n  ${this.camelToKebab(prop)}: ${obj[prop]};`);
       }, " ");
-      return `{\n${content}}`;
+      return `{${content}\n}`;
     },
   },
 };

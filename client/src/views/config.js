@@ -6,15 +6,17 @@ export default {
   global: {
     classes: {
       text: {
-        fontSize: "40px",
+        fontSize: "26px",
+        fontFamily: "Arial",
+        color: "rgba(0,0,0,0.8)",
       },
       subtext: {
-        fontSize: "20px",
+        fontSize: "14px",
       },
       card: {
         background: "#ffffff",
-        borderRadius: "20px",
         padding: "20px",
+        border: "1px solid rgba(0,0,0,0.1)",
       },
     },
   },
@@ -30,26 +32,40 @@ export default {
       style: {},
       childs: [
         {
-          tag: "div",
-          name: "c2",
-          content: "container 2",
-          classes: ["subtext", "card"],
-          style: {
-            background: "blue",
+          tag: "p",
+          name: "c1",
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          attrs: {
+            title: "C1",
           },
-          childs: [
-            {
-              tag: "h1",
-              name: "c2",
-              content: "Header",
-              classes: ["card"],
-              style: {
-                background: "green",
-                color: "red",
-              },
-              childs: [],
-            },
-          ],
+          classes: ["subtext"],
+          style: {},
+          childs: [],
+        },
+      ],
+    },
+    {
+      tag: "div",
+      name: "c1",
+      content: "container 1",
+      attrs: {
+        title: "C1",
+      },
+      classes: ["text", "card"],
+      style: {},
+      childs: [
+        {
+          tag: "p",
+          name: "c1",
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          attrs: {
+            title: "C1",
+          },
+          classes: ["subtext"],
+          style: {},
+          childs: [],
         },
       ],
     },
