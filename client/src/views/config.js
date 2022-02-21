@@ -33,7 +33,7 @@ export default {
           tag: "div",
           name: "c2",
           content: "container 2",
-          classes: [],
+          classes: ["subtext"],
           style: {
             background: "blue",
           },

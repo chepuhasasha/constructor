@@ -44,12 +44,12 @@ export default {
     Object.keys(this.config.global.classes).forEach((name) => {
       let content = "";
       Object.keys(this.config.global.classes[name]).forEach((prop) => {
-        content += `${this.kebab(prop)}: ${
+        content += `  ${this.kebab(prop)}: ${
           this.config.global.classes[name][prop]
         }; \n`;
       });
       console.log(content);
-      style.innerHTML += `\n.${name} { ${content} }`;
+      style.innerHTML += `\n.${name} { \n${content} }`;
     });
     document.getElementsByTagName("head")[0].appendChild(style);
   },
