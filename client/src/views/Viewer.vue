@@ -8,9 +8,11 @@ Element(
 <script>
 import data from "./config.js";
 import Element from "@/components/Utils/Element.vue";
+import mixin from "../mixins/index.js";
 
 export default {
   name: "Viewer",
+  mixins: [mixin],
   components: {
     Element,
   },
@@ -42,14 +44,8 @@ export default {
     style.type = "text/css";
     style.innerHTML = " ";
     Object.keys(this.config.global.classes).forEach((name) => {
-      let content = "";
-      Object.keys(this.config.global.classes[name]).forEach((prop) => {
-        content += `  ${this.kebab(prop)}: ${
-          this.config.global.classes[name][prop]
-        }; \n`;
-      });
-      console.log(content);
-      style.innerHTML += `\n.${name} { \n${content} }`;
+      let content = this.objectToCSS(this.config.global.classes[name]);
+      style.innerHTML += `\n.${name} ${content}`;
     });
     document.getElementsByTagName("head")[0].appendChild(style);
   },

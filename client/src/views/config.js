@@ -33,11 +33,23 @@ export default {
           tag: "div",
           name: "c2",
           content: "container 2",
-          classes: ["subtext"],
+          classes: ["subtext", "card"],
           style: {
             background: "blue",
           },
-          childs: [],
+          childs: [
+            {
+              tag: "h1",
+              name: "c2",
+              content: "Header",
+              classes: ["card"],
+              style: {
+                background: "green",
+                color: "red",
+              },
+              childs: [],
+            },
+          ],
         },
       ],
     },
