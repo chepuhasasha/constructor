@@ -1,30 +1,30 @@
 <template lang="pug">
-svg(:class='[$style[mode]]' @click='click' :d='getPath')
+svg(viewBox='0 0 512 512' :width='size' :height='size' @click='click')
+  path(v-for='path in getPaths' :d='path' :fill='fill')
 </template>
 
 <script>
+import icons from "./icons.js";
+
 export default {
   name: "Icon",
   props: {
-    mode: {
-      type: String,
-      default: "default",
-    },
     icon: {
       type: String,
-      default: null,
+      default: "error",
+    },
+    fill: {
+      type: String,
+      default: "black",
+    },
+    size: {
+      type: Number,
+      default: 14,
     },
   },
-  data() {
-    return {
-      map: {
-        plus: "",
-      },
-    };
-  },
   computed: {
-    getPath() {
-      return this.map[this.icon];
+    getPaths() {
+      return icons.getPaths(this.icon);
     },
   },
   methods: {
@@ -34,9 +34,3 @@ export default {
   },
 };
 </script>
-
-<style lang="less" module>
-.default {
-  background: red;
-}
-</style>
