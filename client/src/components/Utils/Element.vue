@@ -2,6 +2,8 @@
 component(
   :is="element.tag"
   :style='element.style'
+  :class='element.classes'
+  v-bind='element.attrs'
 ) {{ element.content }}
   Element(
     v-for='child in element.childs' 

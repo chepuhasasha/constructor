@@ -24,8 +24,34 @@ export default {
       return this.config.layout;
     },
   },
+  methods: {
+    kebab(str) {
+      return str
+        .match(
+          /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g
+        )
+        .map((x) => x.toLowerCase())
+        .join("-");
+    },
+  },
   created() {
     this.config = data;
+  },
+  mounted() {
+    var style = document.createElement("style");
+    style.type = "text/css";
+    style.innerHTML = " ";
+    Object.keys(this.config.global.classes).forEach((name) => {
+      let content = "";
+      Object.keys(this.config.global.classes[name]).forEach((prop) => {
+        content += `${this.kebab(prop)}: ${
+          this.config.global.classes[name][prop]
+        }; \n`;
+      });
+      console.log(content);
+      style.innerHTML += `\n.${name} { ${content} }`;
+    });
+    document.getElementsByTagName("head")[0].appendChild(style);
   },
 };
 </script>
