@@ -35,4 +35,18 @@ export default {
     });
     return result;
   },
+
+  frame({
+    paddingTop=0,
+    paddingRight=0,
+    paddingBottom=0,
+    paddingLeft=0,
+  }) {
+    const result = {
+      style: {
+        padding: `${paddingTop}px ${paddingRight}px ${paddingBottom}px ${paddingLeft}px`
+      }
+    }
+    return result;
+  }
 };
